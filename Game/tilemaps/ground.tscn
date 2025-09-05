@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq3t4qcputpv7"]
+
+[ext_resource type="Texture2D" uid="uid://d35hvktfq0aku" path="res://Art/tileset/ground.png" id="1_780c4"]
+[ext_resource type="PackedScene" uid="uid://cvfcl4c5jp0wk" path="res://Game/objects/coin.tscn" id="2_pa8qd"]
+[ext_resource type="PackedScene" uid="uid://x2nomjisvwxs" path="res://Game/objects/up_arrow.tscn" id="3_jy32c"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_peuxi"]
+texture = ExtResource("1_780c4")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 4, 4, 4, 8, 8, -8, 8)
+1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, 0, 4, 8, -4, 8)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_iwvk2"]
+resource_name = "Items"
+scenes/1/scene = ExtResource("2_pa8qd")
+scenes/2/scene = ExtResource("3_jy32c")
+
+[sub_resource type="TileSet" id="TileSet_apfo5"]
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 4
+physics_layer_1/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_peuxi")
+sources/1 = SubResource("TileSetScenesCollectionSource_iwvk2")
+
+[node name="Ground" type="TileMapLayer"]
+tile_set = SubResource("TileSet_apfo5")

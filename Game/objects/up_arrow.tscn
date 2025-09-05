@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://x2nomjisvwxs"]
+
+[ext_resource type="PackedScene" uid="uid://cvfcl4c5jp0wk" path="res://Game/objects/coin.tscn" id="1_6kwqf"]
+[ext_resource type="Texture2D" uid="uid://cd4kfn4opbeok" path="res://Art/object/up_arrow.png" id="2_48mi6"]
+[ext_resource type="Script" uid="uid://wbpcooe3vgsq" path="res://Game/objects/up_arrow.gd" id="3_48mi6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67vhc"]
+atlas = ExtResource("2_48mi6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5h7m"]
+atlas = ExtResource("2_48mi6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkwob"]
+atlas = ExtResource("2_48mi6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nttyj"]
+atlas = ExtResource("2_48mi6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bgj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67vhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5h7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkwob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nttyj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UpArrow" instance=ExtResource("1_6kwqf")]
+sprite_frames = SubResource("SpriteFrames_2bgj8")
+frame_progress = 0.517815
+script = ExtResource("3_48mi6")
